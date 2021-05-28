@@ -1,0 +1,43 @@
+.MainPart{
+    grid-area: Mai;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template: 1fr 1fr/ 0.2fr 1fr;
+    grid-template-areas:
+        "mainB mainB"
+        "avatar posts";
+}
+
+.MainPart_back img{
+    width: 100%;
+    height: 400px;
+}
+
+.MainPart_back{
+    grid-area: mainB;
+}
+
+.MainPart_avatar img{
+    width: 120px;
+    height: 100px;
+}
+
+.MainPart_avatar{
+    grid-area: avatar ;
+}
+
+.MainPart_posts{
+    grid-area: posts;
+    padding: 30px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr;
+    padding: 20px ;
+    text-align: center;
+    margin: 0 auto;
+}
+.MainPart_post1{
+
+}
+.MainPart_heading{
+    text-align: center;
+}

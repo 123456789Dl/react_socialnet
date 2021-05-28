@@ -1,31 +1,12 @@
 .App {
-  text-align: center;
+  min-height: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: auto 1fr;
 
   grid-template-areas:
           "Head Head"
           "Lin Mai";
-  width: 1400px;
-  margin: 0 auto;
 }
 
-.Header{
-  grid-area: Head;
-  background-color: aqua;
-}
-.Links{
-  grid-area: Lin;
-  background-color: brown;
 
-}
-.MainPart{
-  grid-area: Mai;
-  background-color: blanchedalmond;
-}
-
-.MainPart img{
-  height: 200px;
-  width: 500px;
-}

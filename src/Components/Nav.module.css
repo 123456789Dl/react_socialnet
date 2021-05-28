@@ -1,0 +1,10 @@
+.Links{
+    grid-area: Lin;
+    background-color: darkslategray;
+    display: grid;
+    text-align: center;
+    padding: 20px;
+    color: aliceblue;
+}
+
+
