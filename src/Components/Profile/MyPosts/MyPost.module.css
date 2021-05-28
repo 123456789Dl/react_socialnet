@@ -1,0 +1,22 @@
+.MainPart_posts{
+    grid-area: posts;
+    padding: 30px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr;
+    padding: 20px ;
+    text-align: center;
+    margin: 0 auto;
+}
+.MainPart_post1{
+
+}
+.MainPart_heading{
+    text-align: center;
+    color: brown;
+}
+.MainPart_post2{
+
+}
+.MainPart_post3{
+
+}
