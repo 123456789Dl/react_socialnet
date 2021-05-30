@@ -1,12 +1,22 @@
 .App {
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: 0.2fr 1fr;
-  grid-template-rows: auto 1fr;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: auto 1fr;
 
-  grid-template-areas:
+    grid-template-areas:
           "Head Head"
           "Lin Mai";
 }
+
+/*.App_wrapper {
+    grid-area: Mai;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template: 1fr / 0.2fr;
+    grid-template-areas:
+        "mainB mainB"
+        "avatar posts";
+}*/
 
 

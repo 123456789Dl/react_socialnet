@@ -5,19 +5,19 @@ const Nav = () => {
     return (
         <nav className={N.Links}>
             <div className="Link-1">
-                <p>Profile</p>
+                <a href="/Profile">Profile</a>
             </div>
             <div className="Link-2">
-                <p>Messages</p>
+                <a href="/Dialogs">Messages</a>
             </div>
             <div className="Link-3">
-                <p>News</p>
+                <a href="/News">News</a>
             </div>
             <div className="Link-4">
-                <p>Music</p>
+                <a href="/Music">Music</a>
             </div>
             <div className="Link-5">
-                <p>Settings</p>
+                <a href="/Settings">Settings</a>
             </div>
         </nav>
     )

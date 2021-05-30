@@ -8,9 +8,9 @@ const MyPost = () => {
             <h2 className={My.MainPart_heading}>
                 My posts
             </h2>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Post message='Hello world' like='21'/>
+            <Post message='Its my first post' like='20'/>
+            <Post message='Kak krasivaa' like='14'/>
 
         </div>
     )

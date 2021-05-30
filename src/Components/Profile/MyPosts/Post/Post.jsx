@@ -1,10 +1,15 @@
 import React from 'react'
 import P from './Post.module.css'
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={P.MainPart_post}>
-            New post
+            <div>
+                {props.message}
+            </div>
+            <div>
+                Likes {props.like}
+            </div>
         </div>
     )
 }

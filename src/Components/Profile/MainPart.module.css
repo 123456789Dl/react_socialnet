@@ -1,13 +1,3 @@
-.MainPart{
-    grid-area: Mai;
-    background-color: blanchedalmond;
-    display: grid;
-    grid-template: 1fr / 0.2fr ;
-    grid-template-areas:
-        "mainB mainB"
-        "avatar posts";
-}
-
 .MainPart_back img{
     width: 100%;
     height: 400px;
