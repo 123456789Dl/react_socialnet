@@ -7,16 +7,12 @@
     padding: 15px;
 }
 
-.Messages{
-    padding: 15px;
-}
 
 .Dialog{
     padding: 10px;
 }
-.Message{
-    padding: 10px;
-}
+
+
 .Dialog a.active{
     color: aqua;
 }

@@ -2,3 +2,11 @@
 .MainPart_post{
 
 }
+.MainPart_avatar img{
+    width: 60px;
+
+}
+
+.MainPart_avatar{
+    grid-area: avatar ;
+}
