@@ -9,14 +9,8 @@
           "Lin Mai";
 }
 
-/*.App_wrapper {
-    grid-area: Mai;
+.App_wrapper {
     background-color: blanchedalmond;
-    display: grid;
-    grid-template: 1fr / 0.2fr;
-    grid-template-areas:
-        "mainB mainB"
-        "avatar posts";
-}*/
+}
 
 
