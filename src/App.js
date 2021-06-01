@@ -13,15 +13,15 @@ import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 
-function App() {
+function App(props) {
     return (
         <BrowserRouter>
             <div className="App">
                 <Header/>
                 <Nav/>
                 <div className="App_wrapper">
-                    <Route path="/Profile" component={MainPart}/>
-                    <Route path="/Dialogs" component={Dialogs}/>
+                    <Route path="/Profile" render={ () => <MainPart posts={props.posts}/>}/>
+                    <Route path="/Dialogs" render={ () => <Dialogs names={props.names} messages={props.messages}/> }/>
                     <Route path="/News" component={News}/>
                     <Route path="/Music" component={Music}/>
                     <Route path="/Settings" component={Settings}/>
