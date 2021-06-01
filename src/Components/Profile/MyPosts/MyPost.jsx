@@ -9,16 +9,16 @@ const MyPost = () => {
         {id: 3, post: "Kak krasivaa", likes: 14}
     ]
 
+    let postsElements = postsData.map((el) => {
+        return (<Post message={el.post} like={el.likes}/>)
+    })
 
     return (
         <div className={My.MainPart_posts}>
             <h2 className={My.MainPart_heading}>
                 My posts
             </h2>
-            <Post message={postsData[0].post} like={postsData[0].likes}/>
-            <Post message={postsData[1].post} like={postsData[1].likes}/>
-            <Post message={postsData[2].post} like={postsData[2].likes}/>
-
+            {postsElements}
         </div>
     )
 }
