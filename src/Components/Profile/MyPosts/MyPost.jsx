@@ -10,8 +10,8 @@ const MyPost = (props) => {
 
     return (
         <div className={My.MainPart_posts}>
-            <h2 className={My.MainPart_heading}>
-            </h2>
+            {/*<h2 className={My.MainPart_heading}>*/}
+            {/*</h2>*/}
             {postsElements}
         </div>
     )

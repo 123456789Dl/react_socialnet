@@ -8,7 +8,7 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 const MainPart = (props) => {
     return(
         <main>
-            <ProfileInfo/>
+            <ProfileInfo addPost={props.addPost}/>
             <MyPost posts={props.posts}/>
         </main>
     )

@@ -6,21 +6,31 @@ import DialogItem from "./DialogItem/DialogItem";
 import M from "./Messages/Message.module.css";
 
 const Dialogs = (props) => {
+    let addNewMessage = React.createRef();
 
-    let methodMap = props.names.map((element) => {
+    let addMessage = () => {
+        let a = addNewMessage.current.value;
+        alert(a);
+    }
+
+    let namesMap = props.state.dialogsData.map((element) => {
         return (<DialogItem name={element.name} id={element.id}/>)
     })
 
-    let messageMap = props.messages.map((el)=> {
+    let messageMap = props.state.messageData.map((el)=> {
         return (<Message text={el.message}/>)
     })
     return (
         <div className={D.Dialogs}>
             <div className={D.Dialogs_items}>
-                {methodMap}
+                {namesMap}
             </div>
             <div className={M.Messages}>
                 {messageMap}
+            </div>
+            <div>
+                <textarea ref={addNewMessage}></textarea>
+                <button onClick={addMessage}>Add message</button>
             </div>
         </div>
     )

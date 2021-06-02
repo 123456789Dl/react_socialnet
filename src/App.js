@@ -14,17 +14,22 @@ import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 
 function App(props) {
+
     return (
         <BrowserRouter>
             <div className="App">
                 <Header/>
                 <Nav/>
                 <div className="App_wrapper">
-                    <Route path="/Profile" render={ () => <MainPart posts={props.posts}/>}/>
-                    <Route path="/Dialogs" render={ () => <Dialogs names={props.names} messages={props.messages}/> }/>
-                    <Route path="/News" component={News}/>
-                    <Route path="/Music" component={Music}/>
-                    <Route path="/Settings" component={Settings}/>
+                    <Route path="/Profile" render={() => <MainPart
+                        posts={props.state.profilePage} addPost={props.addPost}/>
+                    }/>
+                    <Route path="/Dialogs" render={() => <Dialogs
+                        state={props.state.dialogsPage}/>
+                    }/>
+                    <Route path="/News" render={() => <News/>}/>
+                    <Route path="/Music" render={() => <Music/>}/>
+                    <Route path="/Settings" render={() => <Settings/>}/>
                 </div>
             </div>
         </BrowserRouter>
