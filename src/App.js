@@ -9,9 +9,9 @@ import MainPart from "./Components/Profile/MainPart";
 import Dialogs from "./Components/Dialogs/Dialogs"
 import s from './Components/Profile/MainPart.module.css'
 import {BrowserRouter, Route} from "react-router-dom";
-import News from "./Components/News/News";
-import Music from "./Components/Music/Music";
-import Settings from "./Components/Settings/Settings";
+import News from "./Components/Navbar/News/News";
+import Music from "./Components/Navbar/Music/Music";
+import Settings from "./Components/Navbar/Settings/Settings";
 
 function App(props) {
 
@@ -22,10 +22,10 @@ function App(props) {
                 <Nav/>
                 <div className="App_wrapper">
                     <Route path="/Profile" render={() => <MainPart
-                        posts={props.state.profilePage} addPost={props.addPost}/>
+                        store={props.store}/>
                     }/>
                     <Route path="/Dialogs" render={() => <Dialogs
-                        state={props.state.dialogsPage}/>
+                        store={props.store}/>
                     }/>
                     <Route path="/News" render={() => <News/>}/>
                     <Route path="/Music" render={() => <Music/>}/>

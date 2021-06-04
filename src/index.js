@@ -1,9 +1,24 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {rerenderEntireTree} from "./render";
-import state, {addPosts} from "./redux/state";
+import store from "./redux/state";
 
 
-rerenderEntireTree(state, addPosts);
+
+
+export let rerenderEntireTree = () => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App store={store}/>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
+
+rerenderEntireTree();
+store.subscribe(rerenderEntireTree);
+
 
 serviceWorker.unregister();
