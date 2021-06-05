@@ -8,10 +8,9 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 const MainPart = (props) => {
     return(
         <main>
-            <ProfileInfo addPost={props.store.addPosts}
-                         newPostText={props.store.state.profilePage.newPostText}
-                         updatePostText={props.store.updatePostText}/>
-            <MyPost posts={props.store.state.profilePage.postsData}/>
+            <ProfileInfo dispatch={props.dispatch.bind(props.store)}
+                         newPostText={props.store._state.profilePage.newPostText}/>
+            <MyPost posts={props.store._state.profilePage.postsData}/>
         </main>
     )
 }

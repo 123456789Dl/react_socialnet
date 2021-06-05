@@ -11,7 +11,7 @@ import store from "./redux/state";
 export let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
-            <App store={store}/>
+            <App store={store} dispatch={store.dispatch}/>
         </React.StrictMode>,
         document.getElementById('root')
     );

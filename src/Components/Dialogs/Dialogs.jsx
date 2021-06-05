@@ -13,11 +13,11 @@ const Dialogs = (props) => {
         alert(a);
     }
 
-    let namesMap = props.store.state.dialogsPage.dialogsData.map((element) => {
+    let namesMap = props.store._state.dialogsPage.dialogsData.map((element) => {
         return (<DialogItem name={element.name} id={element.id}/>)
     })
 
-    let messageMap = props.store.state.dialogsPage.messageData.map((el)=> {
+    let messageMap = props.store._state.dialogsPage.messageData.map((el)=> {
         return (<Message text={el.message}/>)
     })
     return (

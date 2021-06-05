@@ -22,7 +22,7 @@ function App(props) {
                 <Nav/>
                 <div className="App_wrapper">
                     <Route path="/Profile" render={() => <MainPart
-                        store={props.store}/>
+                        store={props.store} dispatch={props.dispatch}/>
                     }/>
                     <Route path="/Dialogs" render={() => <Dialogs
                         store={props.store}/>
@@ -34,6 +34,7 @@ function App(props) {
             </div>
         </BrowserRouter>
     );
+
 }
 
 export default App;

@@ -7,13 +7,19 @@ export default function ProfileInfo(props) {
     let newPostEvent = React.createRef();
 
     let addPost = () => {
-        let a = newPostEvent.current.value;
-        props.addPost(a);
+        let objPost = {
+            // a: newPostEvent.current.value,
+            type: "ADD-POST"
+        }
+        props.dispatch(objPost);
     }
 
     let onChangePost = () => {
-        let text = newPostEvent.current.value;
-        props.updatePostText(text);
+        let changePost = {
+            postText: newPostEvent.current.value,
+            type: "UPDATE-POST-TEXT"
+        }
+        props.dispatch(changePost);
     }
 
     return (

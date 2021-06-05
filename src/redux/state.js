@@ -1,8 +1,8 @@
 export let store = {
-    rerenderEntireTree() {
+    _callSub() {
         console.log('state changed')
     },
-    state: {
+    _state: {
         dialogsPage: {
             dialogsData: [
                 {name: 'Жентос', id: 1},
@@ -24,27 +24,32 @@ export let store = {
             newPostText: 'testing text in text'
         }
     },
-    addPosts() {
-        let newPost = {
-            id: 5,
-            post: store.state.profilePage.newPostText,
-            likes: 20
-        }
-        store.rerenderEntireTree(store);
-        store.state.profilePage.postsData.push(newPost)
-        store.state.profilePage.newPostText = '';
-    },
-    updatePostText(postText) {
-        store.state.profilePage.newPostText = postText;
-        console.log(postText);
-        store.rerenderEntireTree();
+    getState() {
+        return this._state
     },
     subscribe(observer) {
-        store.rerenderEntireTree = observer;
-    }
+        this._callSub = observer;
+    },
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            let newPost = {
+                id: 5,
+                post: this._state.profilePage.newPostText,
+                likes: 20
+            }
+            this._callSub();
+            this._state.profilePage.postsData.push(newPost)
+            this._state.profilePage.newPostText = '';
 
+        } else if (action.type === "UPDATE-POST-TEXT") {
+
+            this._state.profilePage.newPostText = action.postText;
+            console.log(action.postText);
+            this._callSub();
+        }
+    }
 }
 
-window.state = store.state;
+window.state = store.getState();
 
 export default store;
