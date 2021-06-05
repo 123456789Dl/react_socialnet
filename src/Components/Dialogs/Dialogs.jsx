@@ -6,11 +6,18 @@ import DialogItem from "./DialogItem/DialogItem";
 import M from "./Messages/Message.module.css";
 
 const Dialogs = (props) => {
+
     let addNewMessage = React.createRef();
 
     let addMessage = () => {
-        let a = addNewMessage.current.value;
-        alert(a);
+        let textNewMessage = addNewMessage.current.value;
+        props.store.dispatch({type:"NEW-MESSAGE-POST"})
+
+    }
+
+    let onChangeMessage = () => {
+        let textNewMessage = addNewMessage.current.value;
+        props.store.dispatch({type:"NEW-MESSAGE-TEXT", messageText:textNewMessage})
     }
 
     let namesMap = props.store._state.dialogsPage.dialogsData.map((element) => {
@@ -29,7 +36,9 @@ const Dialogs = (props) => {
                 {messageMap}
             </div>
             <div>
-                <textarea ref={addNewMessage}></textarea>
+                <textarea ref={addNewMessage}
+                          value={props.store._state.dialogsPage.newMessageText}
+                          onChange={onChangeMessage}></textarea>
                 <button onClick={addMessage}>Add message</button>
             </div>
         </div>

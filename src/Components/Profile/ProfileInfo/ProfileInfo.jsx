@@ -1,5 +1,6 @@
 import React from "react";
 import P from "./ProfileInfo.module.css"
+import {addPostActionCreator, onChangePostActionCreator} from "../../../redux/state";
 
 
 export default function ProfileInfo(props) {
@@ -7,19 +8,12 @@ export default function ProfileInfo(props) {
     let newPostEvent = React.createRef();
 
     let addPost = () => {
-        let objPost = {
-            // a: newPostEvent.current.value,
-            type: "ADD-POST"
-        }
-        props.dispatch(objPost);
+        props.dispatch(addPostActionCreator());
     }
 
     let onChangePost = () => {
-        let changePost = {
-            postText: newPostEvent.current.value,
-            type: "UPDATE-POST-TEXT"
-        }
-        props.dispatch(changePost);
+        let text = newPostEvent.current.value;
+        props.dispatch(onChangePostActionCreator(text));
     }
 
     return (
