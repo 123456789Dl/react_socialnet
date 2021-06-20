@@ -4,27 +4,27 @@ import {NavLink} from "react-router-dom";
 import Message from "./Messages/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import M from "./Messages/Message.module.css";
+import {onAddMessageActionCreator, onChangeMessageActionCreator} from "../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
 
     let addNewMessage = React.createRef();
 
     let addMessage = () => {
-        let textNewMessage = addNewMessage.current.value;
-        props.store.dispatch({type:"NEW-MESSAGE-POST"})
+        props.dispatch(onAddMessageActionCreator())
 
     }
 
     let onChangeMessage = () => {
         let textNewMessage = addNewMessage.current.value;
-        props.store.dispatch({type:"NEW-MESSAGE-TEXT", messageText:textNewMessage})
+        props.dispatch(onChangeMessageActionCreator(textNewMessage))
     }
 
-    let namesMap = props.store._state.dialogsPage.dialogsData.map((element) => {
+    let namesMap = props.store.dialogsPage.dialogsData.map((element) => {
         return (<DialogItem name={element.name} id={element.id}/>)
     })
 
-    let messageMap = props.store._state.dialogsPage.messageData.map((el)=> {
+    let messageMap = props.store.dialogsPage.messageData.map((el)=> {
         return (<Message text={el.message}/>)
     })
     return (
@@ -37,7 +37,7 @@ const Dialogs = (props) => {
             </div>
             <div>
                 <textarea ref={addNewMessage}
-                          value={props.store._state.dialogsPage.newMessageText}
+                          value={props.store.dialogsPage.newMessageText}
                           onChange={onChangeMessage}></textarea>
                 <button onClick={addMessage}>Add message</button>
             </div>

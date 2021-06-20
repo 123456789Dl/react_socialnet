@@ -1,6 +1,7 @@
 import React from "react";
 import P from "./ProfileInfo.module.css"
-import {addPostActionCreator, onChangePostActionCreator} from "../../../redux/state";
+import {addPostActionCreator, onChangePostActionCreator} from "../../redux/profile-reducer";
+
 
 
 export default function ProfileInfo(props) {
