@@ -3,9 +3,8 @@ const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
 
 let initialState = {
         postsData: [
-            {id: 1, post: "Hello world", likes: 21},
-            {id: 2, post: "It's my first post", likes: 20},
-            {id: 3, post: "Kak krasivaa", likes: 14}
+            {id: 1, post: "Hello, Helen", likes: 21},
+            {id: 2, post: "How is your day?", likes: 20},
         ],
         newPostText: 'testing text in text'
 }

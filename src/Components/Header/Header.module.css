@@ -1,6 +1,6 @@
 .Header{
     grid-area: Head;
-    background-color: chocolate;
+    background-image: linear-gradient(to top, rgb(159, 167, 245), rgb(153, 156, 229), rgb(146, 145, 214), rgb(140, 135, 198), rgb(134, 124, 182), rgb(127, 113, 167), rgb(121, 102, 151), rgb(114, 91, 136), rgb(108, 80, 120), rgb(102, 70, 104), rgb(95, 59, 89), rgb(89, 48, 73));
     padding: 15px;
     display: grid;
     grid-auto-flow: column;

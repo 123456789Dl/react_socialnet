@@ -27,6 +27,7 @@ const Dialogs = (props) => {
     let messageMap = props.store.dialogsPage.messageData.map((el)=> {
         return (<Message text={el.message}/>)
     })
+
     return (
         <div className={D.Dialogs}>
             <div className={D.Dialogs_items}>

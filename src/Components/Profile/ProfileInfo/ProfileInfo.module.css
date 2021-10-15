@@ -9,6 +9,7 @@
 /*}*/
 .MainPart_button{
     display: grid;
-    text-align: center;
+    width: 200px;
+    margin: auto;
 }
 

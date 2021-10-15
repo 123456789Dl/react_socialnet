@@ -1,12 +1,18 @@
 
 .MainPart_post{
-
+    text-align: left;
+    display: flex;
 }
 .MainPart_avatar img{
-    width: 60px;
+    width: 100px;
 
 }
 
 .MainPart_avatar{
-    grid-area: avatar ;
+    text-align: left;
+}
+
+.MainPart_text{
+    display: grid;
+    padding: 20px;
 }

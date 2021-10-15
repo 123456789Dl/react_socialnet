@@ -1,5 +1,6 @@
 import dialogReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
+import newsReducer from "./news-reducer";
 
 export let store = {
     _callSub() {
@@ -8,24 +9,29 @@ export let store = {
     _state: {
         dialogsPage: {
             dialogsData: [
-                {name: 'Жентос', id: 1},
+                {name: 'Jeno', id: 1},
                 {name: 'Дантес', id: 2},
                 {name: 'Дошик', id: 3}
             ],
             messageData: [
-                {id: 1, message: 'hello world'},
-                {id: 2, message: 'how are you?'},
-                {id: 3, message: 'that happened?'}
+                {id: 1, message: 'Hello, Helen'},
+                {id: 2, message: 'How is your day?'}
             ],
-            newMessageText: 'My first message, DATEBAYO'
+            newMessageText: 'My first message'
         },
         profilePage: {
             postsData: [
-                {id: 1, post: "Hello world", likes: 21},
-                {id: 2, post: "It's my first post", likes: 20},
-                {id: 3, post: "Kak krasivaa", likes: 14}
+                {id: 1, post: "Hello, Helen", likes: 21},
+                {id: 2, post: "How is your day?", likes: 20},
+                {id: 3, post: "Miss u", likes: 1004}
             ],
             newPostText: 'testing text in text'
+        },
+        newsPage: {
+            newsData: [
+                {date:"13.05.90", newsText:"Hello world"}
+            ],
+            newNewsText: "Helohelohelo"
         }
     },
     getState() {
@@ -37,6 +43,7 @@ export let store = {
     dispatch(action) {
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogReducer(this._state.dialogsPage, action);
+        this._state.newsPage = newsReducer(this._state.newsPage, action);
         this._callSub();
     }
 }

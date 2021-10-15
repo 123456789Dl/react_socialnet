@@ -5,11 +5,12 @@ import Nav from "./Components/Navbar/Nav";
 import MainPart from "./Components/Profile/MainPart";
 import Dialogs from "./Components/Dialogs/Dialogs"
 import {BrowserRouter, Route} from "react-router-dom";
-import News from "./Components/Navbar/News/News";
+import MainPageNews from "./Components/Navbar/News/MainPageNews";
 import Music from "./Components/Navbar/Music/Music";
 import Settings from "./Components/Navbar/Settings/Settings";
 
 function App(props) {
+
     return (
         <BrowserRouter>
             <div className="App">
@@ -22,7 +23,7 @@ function App(props) {
                     <Route path="/Dialogs" render={() => <Dialogs
                         store={props.state} dispatch={props.dispatch}/>
                     }/>
-                    <Route path="/News" render={() => <News/>}/>
+                    <Route path="/MainPageNews" render={() => <MainPageNews store={props.state} dispatch={props.dispatch}/>}/>
                     <Route path="/Music" render={() => <Music/>}/>
                     <Route path="/Settings" render={() => <Settings/>}/>
                 </div>

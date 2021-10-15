@@ -1,17 +1,19 @@
 import React from 'react'
 import P from './Post.module.css'
 
-const   Post = (props) => {
+const Post = (props) => {
     return (
         <div className={P.MainPart_post}>
             <div className={P.MainPart_avatar}>
-                <img src="https://rozetked.me/images/uploads/dwoilp3BVjlE.jpg" alt=""/>
+                <img src="https://cdn.pixabay.com/photo/2017/07/20/02/03/cat-2520988_960_720.jpg" alt=""/>
             </div>
-            <div>
-                {props.message}
-            </div>
-            <div>
-                Likes {props.like}
+            <div className={P.MainPart_text}>
+                <div>
+                    {props.message}
+                </div>
+                <div>
+                    Likes {props.like}
+                </div>
             </div>
         </div>
     )
