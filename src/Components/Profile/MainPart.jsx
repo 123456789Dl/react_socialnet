@@ -9,9 +9,8 @@ import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
 const MainPart = (props) => {
     return(
         <main>
-            <MyPost posts={props.store.profilePage.postsData}/>
-            <ProfileInfoContainer dispatch={props.dispatch.bind(props.store)}
-                         newPostText={props.store.profilePage.newPostText}/>
+            <MyPost posts={props.store.getState().profilePage.postsData}/>
+            <ProfileInfoContainer store={props.store}/>
         </main>
     )
 }
