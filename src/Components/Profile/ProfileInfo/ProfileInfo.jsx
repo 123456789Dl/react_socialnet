@@ -8,20 +8,20 @@ export default function ProfileInfo(props) {
 
     let newPostEvent = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost()
     }
 
     let onChangePost = () => {
         let text = newPostEvent.current.value;
-        props.dispatch(onChangePostActionCreator(text));
+        props.ChangePost(text)
     }
 
     return (
         <div>
             <div className={P.MainPart_button}>
                 <textarea ref={newPostEvent} value={props.newPostText} onChange={onChangePost}></textarea>
-                <button onClick={addPost}>Add post</button>
+                <button onClick={onAddPost}>Add post</button>
             </div>
         </div>
     )
