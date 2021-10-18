@@ -1,13 +1,13 @@
 import React from "react";
-import NewsInfo from "./NewsInfo/NewsInfo";
-import NewsPosts from "./NewsPosts/NewsPosts";
+import NewsInfoContainer from "./NewsInfo/NewsInfoContainer";
+import NewsPostsContainer from "./NewsPosts/NewsPostsContainer";
 
-const MainPageNews = (props) => {
+const MainPageNews = () => {
 
     return (
         <main>
-            <NewsPosts newsData={props.store.newsPage.newsData}/>
-            <NewsInfo dispatch={props.dispatch} newsPage={props.store.newsPage}/>
+            <NewsPostsContainer/>
+            <NewsInfoContainer/>
         </main>
     )
 
