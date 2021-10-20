@@ -8,6 +8,8 @@ import MainPageNews from "./Components/Navbar/News/MainPageNews";
 import Music from "./Components/Navbar/Music/Music";
 import Settings from "./Components/Navbar/Settings/Settings";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import Users from "./Components/Users/Users";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 function App(props) {
 
@@ -22,7 +24,8 @@ function App(props) {
                     }/>
                     <Route path="/Dialogs" render={() => <DialogsContainer/>
                     }/>
-                    <Route path="/MainPageNews" render={() => <MainPageNews store={props.state} dispatch={props.dispatch}/>}/>
+                    <Route path="/Users" render={() => <UsersContainer/>}/>
+                    <Route path="/MainPageNews" render={() => <MainPageNews/>}/>
                     <Route path="/Music" render={() => <Music/>}/>
                     <Route path="/Settings" render={() => <Settings/>}/>
                 </div>

@@ -11,16 +11,20 @@ let initialState = {
 const newsReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_MESSAGE:
-            state.newNewsText = action.newsNewText;
-            return state;
+            return {
+                ...state,
+                newNewsText: action.newsNewText
+            }
         case NEWS_MESSAGE_TEXT:
             let newsArr = {
                 date:"13.06.20",
                 newsText: state.newNewsText
             }
-            state.newsData.push(newsArr);
-            state.newNewsText = "";
-            return state;
+            return {
+                ...state,
+                newsData:[...state.newsData, newsArr],
+                newNewsText: ""
+            }
         default:
             return state;
     }
