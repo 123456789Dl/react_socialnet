@@ -1,11 +1,12 @@
 import React from 'react'
 import P from './Post.module.css'
+import userAvatar from "../../../../icons/farmer (girl).png"
 
 const Post = (props) => {
     return (
         <div className={P.MainPart_post}>
             <div className={P.MainPart_avatar}>
-                <img src="https://cdn.pixabay.com/photo/2017/07/20/02/03/cat-2520988_960_720.jpg" alt=""/>
+                <img src={userAvatar}/>
             </div>
             <div className={P.MainPart_text}>
                 <div>

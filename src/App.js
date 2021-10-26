@@ -8,7 +8,6 @@ import MainPageNews from "./Components/Navbar/News/MainPageNews";
 import Music from "./Components/Navbar/Music/Music";
 import Settings from "./Components/Navbar/Settings/Settings";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
-import Users from "./Components/Users/Users";
 import UsersContainer from "./Components/Users/UsersContainer";
 
 function App(props) {

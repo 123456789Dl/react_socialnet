@@ -1,13 +1,15 @@
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS";
-const SET_CURRENT_PAGE = "SET-CURRENT-PAGE"
+const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING"
 
 let initialState = {
     users: [],
     totalCount: 20,
     lengthOfPage: 4,
-    selectedPage:1
+    selectedPage:1,
+    isFetching:false
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -42,13 +44,19 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 selectedPage: action.curPage
             }
+        case TOGGLE_IS_FETCHING:
+            return {
+                ...state,
+                isFetching: action.toggleFetching
+            }
         default:
             return state;
     }
 }
 
-export const followAC = (id) => ({type: "FOLLOW", userId: id})
-export const unfollowAC = (id) => ({type: "UNFOLLOW", userId: id})
-export const setUsersAC = (users) => ({type: "SET-USERS", users: users})
-export const setCurrentPageAC = (curPage) => ({type:"SET-CURRENT-PAGE", curPage})
+export const followToPerson = (id) => ({type: "FOLLOW", userId: id})
+export const unfollowToPerson = (id) => ({type: "UNFOLLOW", userId: id})
+export const setUsers = (users) => ({type: "SET-USERS", users: users})
+export const setCurrentPage = (curPage) => ({type:"SET-CURRENT-PAGE", curPage})
+export const toggleIsFetching = (toggleFetching) => ({type:TOGGLE_IS_FETCHING, toggleFetching})
 export default usersReducer;

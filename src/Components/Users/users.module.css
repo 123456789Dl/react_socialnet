@@ -5,10 +5,12 @@
 }
 .main_content{
     display: grid;
-    grid-template: repeat(2, 1fr)/ repeat(2, 1fr);
+    /*grid-template: repeat(2, 1fr)/ repeat(2, 1fr);*/
     border: 2px solid black;
     border-radius: 5%;
     width: 300px;
+    align-items: center;
+    justify-content: center;
 }
 .avatar{
     border-radius: 10%;
@@ -18,7 +20,6 @@ div button{
 }
 .selectedPage{
     font-weight: bold;
-    font-size: 20px;
 }
 .page_number_line{
     margin: 40px;
