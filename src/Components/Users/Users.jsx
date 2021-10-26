@@ -1,25 +1,41 @@
 import React from "react";
 import Styles from "./users.module.css"
 import * as axios from "axios";
+import userPhoto from "../../icons/farmer.png"
 
 class Users extends React.Component {
     componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.selectedPage}&count=${this.props.lengthOfPage}`).then(response => {
             console.log(response.data.items)
             this.props.setUsers(response.data.items)
         })
     }
 
-    render() {
-        return <div>
+    onPageChanged = (curPage) =>
+    {
+        this.props.setCurrentPage(curPage)
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${curPage}&count=${this.props.lengthOfPage}`).then(response => {
+                console.log(response.data.items)
+                this.props.setUsers(response.data.items)
+            })
+    }
 
+
+    render() {
+        let pagesData = []
+        let pagesCounter = Math.ceil(this.props.totalCount / this.props.lengthOfPage)
+        for(let i =  1; i <= pagesCounter; i++) {
+             pagesData.push(i)
+        }
+
+        return <div>
             {
                 this.props.users.map(el => <div>
                         <div className={Styles.wrapper_user}>
                             <div>
                                 <div>
                                     <img
-                                        src={el.photos.small != null ? el.photos.small : "https://image.emojipng.com/4/9448004.jpg"}
+                                        src={el.photos.small != null ? el.photos.small : userPhoto}
                                         className={Styles.avatar}/>
                                 </div>
                                 {el.followStatus
@@ -37,6 +53,12 @@ class Users extends React.Component {
                     </div>
                 )
             }
+            <div className={Styles.page_number_line}>
+                {pagesData.map(el => {
+                    return <span className={this.props.selectedPage === el && Styles.selectedPage }
+                                 onClick={() => this.onPageChanged(el) }>{el} </span>
+                })}
+            </div>
         </div>
     }
 }
